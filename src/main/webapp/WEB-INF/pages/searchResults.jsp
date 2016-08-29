@@ -7,7 +7,44 @@
 <head>
     <title>Search users</title>
     <link href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-color: #ccc;
+        }
 
+        .tg td {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #ccc;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .tg th {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #ccc;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        .tg .tg-4eph {
+            background-color: #f9f9f9
+        }
+    </style>
 </head>
 <body>
 
@@ -17,7 +54,7 @@
     <c:if test="${empty foundUsers}" ><h3>No users with name "${searchString.searchString}" found</h3></c:if>
     <c:if test="${!empty foundUsers}">
 
-        <table class="table">
+        <table class="tg">
             <tr>
                 <th width="40">id</th>
                 <th width="120">name</th>

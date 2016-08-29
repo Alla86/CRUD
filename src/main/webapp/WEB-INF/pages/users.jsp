@@ -90,17 +90,29 @@
         </c:forEach>
     </table>
 
-    <div class="text-center">
-        <ul class="pagination">
-
-            <li <c:if test="${page<=1}"> class="disabled" </c:if>>
-                <a href="/users/page/${page-1}">&laquo;</a></li>
-
-
-
-            <li <c:if test="${page>=pages}"> class="disabled" </c:if>>
-                <a href="/users/page/${page+1}">&raquo;</a></li>
-        </ul>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class='pagination pagination-centered'>
+                <ul class="pagination">
+                    <li <c:if test="${page<=1}"> class="disabled"</c:if>>
+                        <a href="/users/page/1">First</a>
+                    </li>
+                    <li <c:if test="${page<=1}"> class="disabled" </c:if>>
+                        <a href="/users/page/${page-1}">«</a>
+                    </li>
+                    <c:forEach begin="1" end="${pages}" var="p">
+                        <li><a href="/users/page/${p}">${p}</a></li>
+                     </c:forEach>
+                    </li>
+                    <li <c:if test="${page>=pages}"> class="disabled" </c:if>>
+                        <a href="/users/page/${page+1}">&raquo;</a>
+                    </li>
+                    <li <c:if test="${page>=pages}"> class="disabled"</c:if>>
+                        <a href="/users/page/${pages}">Last</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </c:if>
 
